@@ -1,9 +1,9 @@
-const { Post } = require('../models/index.js');
-const PostController = {
+const { Category } = require('../models/index.js');
+const CateroryController = {
     create(req, res) {
-        Post.create(req.body)
-            .then(post => res.status(201).send({ message: 'Publicación creada con éxito', post }))
+        Category.create(req.body)
+            .then(Category => res.status(201).send({ message: 'Category created successfully', Category }))
             .catch(err => console.error(err))
     },
 }
-module.exports = PostController
+module.exports = CategoryController
