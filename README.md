@@ -39,7 +39,7 @@ My project focuses on delivering miraculouses right to your doorstep, all powere
 ## Endpoints
 The project offers the following endpoints for various functionalities, such as managing products, categories, orders, and users. For detailed information, please refer to the API documentation.
 
-## Installation
+## Installation 🔧
 To get started with The Miraculous Store project, follow these installation steps:
 1. Clone this repository.
 2. Install the required dependencies using `npm install`.
