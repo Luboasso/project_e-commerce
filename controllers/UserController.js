@@ -6,46 +6,22 @@ const { Op} = Sequelize;
 
 const UserController = {
 
-    create(req, res) {
-
+    create(req, res, next) {
+        try {
         req.body.role = "user";
         const password = bcrypt.hashSync(req.body.password, 10)
         User.create({ ...req.body, password })
 
             .then(user => res.status(201).send({ message: 'The user has been successfully created.', user }))
 
-            .catch(err => console.error(err))
+        } catch(error){
+                console.error(error)
+                next(error)
+                
+                }
 
     },
 
-    // getAll(req, res) {
-    //     User.findAll({
-    //         include: [Product],
-    //     })
-    //         .then((users) => res.send(users))
-    //         .catch((err) => {
-    //             console.log(err);
-    //             res.status(500).send({
-    //                 message: 
-    //                 "There has been an issue loading the products.",
-    //             });
-    //         });
-    // },
-
-    // async delete(req, res) {
-    //     await User.destroy({
-    //         where: {
-    //             id: req.params.id,
-    //         },
-    //     });
-    //     await Product.destroy({
-    //         where: {
-    //             UserId: req.params.id,
-    //         },
-    //     });
-    //     res.send("The user has been successfully deleted.");
-    // },
-    
     async update(req, res) {
         await User.update(req.body, {
             where: {
