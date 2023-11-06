@@ -15,6 +15,16 @@ const CategoryController = {
             console.error(error);
             res.status(500).json({ message: 'There has been an issue' });
         }
-    }
+    },
+
+    async delete(req, res) {
+        await Category.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });
+        res.send("The category has been successfully deleted.");
+    },
+
 }
 module.exports = CategoryController

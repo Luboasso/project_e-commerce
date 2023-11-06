@@ -11,6 +11,6 @@ router.put('/id/:id',authentication, ProductController.update);
 router.get("/id/:id",ProductController.getById);
 router.get("/product_name/:product_name",ProductController.getByName);
 router.get("/price/:price",ProductController.getPrice);
-router.get("/orderprice/:price",ProductController.getOrderedPrice);
+router.get("/orderprice",ProductController.getOrderedPrice);
 
 module.exports = router;
