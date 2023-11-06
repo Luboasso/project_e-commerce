@@ -119,7 +119,32 @@ const UserController = {
 
         }
 
-    }
+    },
+
+    async getUserInfo(req, res){
+        try {
+          const user = await User.findByPk(req.user.id, {
+            include: [
+              {
+                model: Order,
+                include: {
+                  model: Product,
+                  through: 'ProductOrder',
+                },
+              },
+            ],
+          });
+      
+          if (!user) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+          }
+      
+          res.status(200).json({ user });
+        } catch (error) {
+          console.error(error);
+          res.status(500).json({ message: 'Ha ocurrido un error' });
+        }
+      },
 }
 
 module.exports = UserController
