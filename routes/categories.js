@@ -9,5 +9,6 @@ router.delete('/:id', authentication, CategoryController.delete)
 router.put('/:id', authentication, CategoryController.update)
 router.get('/catwithprods', CategoryController.getAllCategoriesWithProducts)
 router.get('/:id', CategoryController.getById)
+router.get("/categoryname/:category_name", CategoryController.getByName);
 
 module.exports = router;
