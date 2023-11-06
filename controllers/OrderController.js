@@ -1,4 +1,4 @@
-const { Order, User,ProductOrder,Product, Sequelize } = require("../models/index.js");
+const { Order, User, ProductOrder, Product, Sequelize } = require("../models/index.js");
 const { Op } = Sequelize;
 const OrderController = {
     async create(req,res){
@@ -13,7 +13,7 @@ const OrderController = {
     async getAllOrdersWithProducts(req, res) {
         try {
           const orders = await Order.findAll({
-            include: Product, 
+            include: [{model: Product, }]
           });
       
           res.status(200).json({ orders });
