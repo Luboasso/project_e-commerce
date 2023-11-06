@@ -2,7 +2,7 @@ const { Product, Order, Category, User, Sequelize } = require('../models/index.j
 const { Op } = Sequelize;
 const ProductController = {
 
-    insert(req, res) {
+    insert(req, res, next) {
 
         Product.create(req.body)
 
@@ -20,7 +20,7 @@ const ProductController = {
             res.json(products);
         } catch (error) {
             console.error(error);
-            res.status(500).json({ message: 'There has been an issue' });
+            next(error)
         }
     },
 
