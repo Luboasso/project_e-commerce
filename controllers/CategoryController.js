@@ -26,5 +26,25 @@ const CategoryController = {
         res.send("The category has been successfully deleted.");
     },
 
+    async update(req, res) {
+        await Category.update(req.body, {
+            where: {
+                id: req.params.id,
+            },
+        });
+        res.send("The category has been successfully updated.");
+    },
+
+    getById(req, res) {
+        Category.findByPk(req.params.id,)
+            .then((product) => res.send(product))
+            .catch((err) => {
+                console.error(err);
+                res.status(500).send(err);
+            });
+    },
+
+
+
 }
 module.exports = CategoryController
