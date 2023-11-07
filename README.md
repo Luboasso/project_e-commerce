@@ -9,7 +9,7 @@ Welcome to The Miraculous Store project, where miraculouses are just a click awa
 - [Endpoints](#endpoints)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Preview](#preview)
+- [SQL Diagram](#SQLdiagram)
 - [License](#license)
 
 ## Overview
@@ -49,10 +49,9 @@ To get started with The Miraculous Store project, follow these installation step
 ## Usage
 To use the API, you can interact with it through HTTP requests. Ensure that you are authenticated to perform certain actions, such as creating or modifying products and categories.
 
-## Preview
-Here's a sneak peek of The Miraculous Store in action:
+## SQL Diagram
 
-![Preview GIF](your-preview-gif-url-here)
+![foto](./diagram.png)
 
 ## License
 This project was created by Luciana Boasso. 
