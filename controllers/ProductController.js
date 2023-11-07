@@ -10,7 +10,8 @@ const ProductController = {
                 product.addOrder(req.body.orders_id)
                 res.send(product)
             })
-            .catch(err => console.error(err))
+            .catch(err => {console.error(err)
+            next(err)})
     },
     async getAll(req, res) {
         try {
